@@ -1,8 +1,14 @@
 # Asset Manifest — repository contents
 
-**Regenerated:** 14 October 2026, from the tree at commit `aa5775d`.
-This file replaces the earlier collection manifest, which described a layout
-(`assets/profile.*`, `resume/…`) that the repository no longer uses.
+**Regenerated:** 15 October 2026, from the tree at HEAD.
+
+---
+
+## Repository size
+
+**7.6 MB** total. The three infographic PNG originals were removed, leaving only
+the WebP versions the site actually serves — this is what took the repository
+down from ~22 MB.
 
 ---
 
@@ -24,9 +30,9 @@ Portfolio/
 │   │              animations.js  contact.js
 │   ├── files/     Kartik_H_CRS_Resume_2026.pdf
 │   │              AI_Patient_Education_Narrative_Review_Report.docx
-│   ├── git.keep   pre-existing placeholder
+│   ├── git.keep   stray 1-byte placeholder (misnamed; see notes)
 │   └── images/
-│       ├── brand/     10 SVG lockups and symbols
+│       ├── brand/     11 SVG lockups and symbols
 │       ├── favicon/   favicon.ico  favicon.svg  favicon-16/32/48.png
 │       │              apple-touch-icon.png  icon-192.png  icon-512.png
 │       ├── icons/     (.gitkeep)
@@ -37,13 +43,10 @@ Portfolio/
 ├── certificates/  8 PDFs
 ├── projects/      telepharmacy-project.pdf
 │                  telepharmacy-project-presentation.pdf
-└── visuals/       smile-framework.{png,webp}
-                   telepharmacy-infographic.{png,webp}
-                   bridging-india-translation.{png,webp}
+└── visuals/       smile-framework.webp
+                   telepharmacy-infographic.webp
+                   bridging-india-translation.webp
 ```
-
-**Note:** `assets/images/profile/profile.png` (2 MB, referenced by no page) was
-deleted. `profile.jpg` is the only portrait in the repository.
 
 ---
 
@@ -60,32 +63,26 @@ deleted. `profile.jpg` is the only portrait in the repository.
 | `junior-medical-writer-internship.pdf` | YuvaIntern — certificate of experience |
 | `bpharm-pdc-certificate.pdf` | **B.Pharm provisional degree certificate**, RGUHS, exam Oct 2025, reg. 20P3770 |
 
-**Note:** the last file is an academic degree certificate, not a certification.
-The site states **7 certifications** and lists the degree separately under
-Education on `journey.html`.
+The last file is an academic degree certificate, not a certification. The site
+states **7 certifications** and lists the degree separately under Education on
+`journey.html`.
 
 ---
 
 ## Visual assets
 
-Each infographic is stored twice: a PNG original and a WebP served to browsers.
-The pages use `<picture>` with the WebP as source and the PNG as fallback, so the
-PNG is never downloaded by a modern browser but remains available.
+Each infographic is stored **once**, as WebP. The PNG originals were deleted, so
+there is no PNG fallback — the pages reference the WebP directly. WebP has been
+supported by every major browser since 2020 (Safari 14+), so a fallback is not
+needed; if one is ever wanted, the originals must be restored first.
 
-| File | Dimensions | Size | Notes |
+| File | Dimensions | Size | Used by |
 |---|---|---|---|
-| `visuals/smile-framework.webp` | 1535×2688 | 0.26 MB | **Served.** S.M.I.L.E. visual-communication asset |
-| `visuals/smile-framework.png` | 1535×2688 | 5.40 MB | Fallback original |
-| `visuals/telepharmacy-infographic.webp` | 1536×2690 | 0.49 MB | **Served** |
-| `visuals/telepharmacy-infographic.png` | 1536×2690 | 6.61 MB | Fallback original |
-| `visuals/bridging-india-translation.webp` | 1408×768 | 0.22 MB | **Served** |
-| `visuals/bridging-india-translation.png` | 1408×768 | 1.65 MB | Fallback original |
-| `assets/images/og/og-image.png` | 1200×630 | 180 KB | Social preview card |
-| `assets/images/profile/profile.jpg` | 1254×1254 | 435 KB | Portrait used by the site |
-
-Served payload for the three infographics is **~0.97 MB**, down from ~13.7 MB
-(93% smaller) at full resolution. The repository itself still carries the PNG
-originals, so total repo size is roughly unchanged.
+| `visuals/smile-framework.webp` | 1535×2688 | 0.26 MB | `knowledge.html` |
+| `visuals/telepharmacy-infographic.webp` | 1536×2690 | 0.49 MB | `research.html` |
+| `visuals/bridging-india-translation.webp` | 1408×768 | 0.22 MB | `knowledge.html` |
+| `assets/images/og/og-image.png` | 1200×630 | 180 KB | social preview card |
+| `assets/images/profile/profile.jpg` | 1254×1254 | 435 KB | portrait across the site |
 
 ---
 
@@ -97,8 +94,12 @@ and is deliberately not published here.
 
 ---
 
-## Source
+## Notes
 
-Collected originally from the Google Drive folder
-`1Q4H74IroLXvXIfUwr_zxzLZAepc7hgR7` (13 October 2026). Contact details,
-locations and academic facts are recorded in `PROFILE-NOTES.md`.
+- `assets/git.keep` is a 1-byte stray file, almost certainly intended as
+  `.gitkeep`. Harmless, but it is not doing the job a placeholder is meant to do.
+- `sitemap.xml` lists the seven content pages. `privacy.html` and `terms.html`
+  are not included, which is a normal choice for utility pages.
+- Source material was originally collected from the Google Drive folder
+  `1Q4H74IroLXvXIfUwr_zxzLZAepc7hgR7` (13 October 2026). Contact details,
+  locations and academic facts are recorded in `PROFILE-NOTES.md`.
