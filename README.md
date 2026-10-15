@@ -165,7 +165,7 @@ A narrative review report written during the Junior Medical Writing internship â
 Presented on nanoparticle drug-delivery systems to a multi-institutional audience; recognised as an award recipient.
 
 <p align="center">
-  <img src="visuals/telepharmacy-infographic.png" alt="telepharmacy-infographic" width="360" />
+  <img src="visuals/telepharmacy-infographic.webp" alt="telepharmacy-infographic" width="360" />
 </p>
 
 ---
