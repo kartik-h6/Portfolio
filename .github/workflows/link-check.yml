@@ -1,0 +1,25 @@
+name: Link check
+
+# Added after the same class of drift bit this repository twice: MANIFEST.md
+# described deleted files, and three <picture> fallbacks pointed at PNG originals
+# that no longer existed. Both were invisible in a browser, so a human check
+# missed them. This gate makes a dangling local reference fail the build instead.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  local-references:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - name: Every local src/href must resolve
+        run: python scripts/check-links.py

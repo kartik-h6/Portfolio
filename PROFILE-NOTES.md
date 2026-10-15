@@ -31,6 +31,11 @@ reaching out through this site comes through the single personal line.
 
 - **M.Pharm (Pharmacy Practice)** — Raghavendra Institute of Pharmaceutical Education and
   Research (RIPER), Anantapur (JNTUA), **Oct 2026 – present**.
+  - **RIPER is an autonomous campus.** It designs and examines its own curriculum rather than
+    following an affiliating university's syllabus. Kartik raised this specifically as a
+    recruiter-facing point: it is a distinction among Indian pharmacy colleges and matters when
+    someone is assessing the academic record. Keep it attached to the M.Pharm entry wherever
+    academics are presented.
 - **B.Pharm** — Priyadarshini College of Pharmacy, Koratagere (RGUHS), 2021 – 2025, CGPA 7.2 / 10.
 - **Pre-University (PCMB)** — Satyam International School & PU College, Ballari, 2018 – 2020, 81.45%.
 
@@ -68,3 +73,5 @@ not a certification — keep it separate in any count):
   said `https://portfolio.techstudyhubcore.in`; that is superseded.
 - **A sibling repository `kartik-h6.github.io` exists** (created 13 Oct 2026) as a possible
   migration to clean URLs at the domain root. It is a scaffold and is not the live site.
+- **The portfolio is the only site carrying a contact number.** Digital Setup has its own
+  business line; the portfolio routes everything through the single personal number.

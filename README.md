@@ -32,7 +32,7 @@
 
 ## 👋 About Me
 
-I'm pursuing my **M.Pharm in Pharmacy Practice** at the **Raghavendra Institute of Pharmaceutical Education and Research (RIPER)**, Anantapur (JNTUA), and I live in **Koppal, Karnataka**.
+I'm pursuing my **M.Pharm in Pharmacy Practice** at the **Raghavendra Institute of Pharmaceutical Education and Research (RIPER)**, Anantapur (JNTUA) — an **autonomous campus** — and I live in **Koppal, Karnataka**.
 
 My work is driven by one question: **how can healthcare knowledge be communicated, organised and translated into understanding that helps people make better decisions — and ultimately improves health outcomes?**
 
@@ -132,7 +132,7 @@ Not a footnote. The ability to explain a medicine in the patient's own language 
 
 | Programme | Institution | Period |
 |---|---|---|
-| **M.Pharm — Pharmacy Practice** | RIPER, Anantapur (JNTUA) | Oct 2026 – present |
+| **M.Pharm — Pharmacy Practice** | RIPER, Anantapur (JNTUA) — autonomous campus | Oct 2026 – present |
 | **B.Pharm** | Priyadarshini College of Pharmacy, Koratagere (RGUHS) | 2021 – 2025 · CGPA 7.2 / 10 |
 | **Pre-University (PCMB)** | Satyam International School & PU College, Ballari | 2018 – 2020 · 81.45% |
 
