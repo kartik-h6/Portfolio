@@ -15,15 +15,6 @@ export const SITE = Object.freeze({
   },
 });
 
-/* --------------------------------------------------------------------------
-   Enhancement flag.
-   Set immediately at module scope — before DOMContentLoaded — so the CSS that
-   hides .reveal elements only ever applies once this script has actually run.
-   If JavaScript is off, or this file fails to load, the flag is never set and
-   the page renders fully visible instead of blank.
-   -------------------------------------------------------------------------- */
-document.documentElement.dataset.enhanced = 'true';
-
 const reduceMotion = () =>
   window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
