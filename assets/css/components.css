@@ -269,14 +269,47 @@ html.cursor-on input, html.cursor-on textarea, html.cursor-on select { cursor: t
   border: 1px solid var(--line); border-radius: var(--radius-l);
   background: var(--bg-soft);
 }
-.scanner img {
+.scanner:not(.scanner--reveal) img {
   width: 100%; height: auto;
   filter: grayscale(.45) contrast(1.03) brightness(.95);
   transition: filter .7s ease, transform .7s ease;
 }
-.scanner:hover img,
-.scanner:focus-within img,
-.scanner.is-revealed img { filter: none; transform: scale(1.012); }
+.scanner:not(.scanner--reveal):hover img,
+.scanner:not(.scanner--reveal):focus-within img,
+.scanner:not(.scanner--reveal).is-revealed img { filter: none; transform: scale(1.012); }
+
+/* ---- Progressive reveal (the hero portrait) ----
+   Two stacked copies of the same file; the second is served from cache, so it
+   costs no extra bytes. The base stays desaturated while the colour copy is
+   masked to zero height and wipes down when the block is activated. That makes
+   the "Tap to reveal" hint literally true: the portrait unveils progressively
+   instead of only changing colour.
+   If a browser ignores mask-size the colour copy simply shows at full size —
+   the portrait renders in colour, so the failure mode is graceful. */
+.scanner--reveal img { width: 100%; height: auto; display: block; }
+.scanner--reveal .reveal__base {
+  filter: grayscale(.45) contrast(1.03) brightness(.95);
+}
+.scanner--reveal .reveal__colour {
+  position: absolute; inset: 0;
+  object-fit: cover; object-position: center 22%;
+  -webkit-mask-image: linear-gradient(to bottom, #000, #000);
+          mask-image: linear-gradient(to bottom, #000, #000);
+  -webkit-mask-size: 100% 0%;
+          mask-size: 100% 0%;
+  -webkit-mask-position: top center;
+          mask-position: top center;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  transition: -webkit-mask-size .9s cubic-bezier(.4, 0, .2, 1),
+                      mask-size .9s cubic-bezier(.4, 0, .2, 1);
+}
+.scanner--reveal:hover .reveal__colour,
+.scanner--reveal:focus-within .reveal__colour,
+.scanner--reveal.is-revealed .reveal__colour {
+  -webkit-mask-size: 100% 100%;
+          mask-size: 100% 100%;
+}
 .scanner::after {
   content: "";
   position: absolute; inset-inline: 0; top: 0; height: 2px; z-index: 3;
