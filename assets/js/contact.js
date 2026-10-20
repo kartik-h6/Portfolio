@@ -13,7 +13,7 @@
 /* Change the number in ONE place. Digits only, with country code, no "+". */
 const WA_NUMBER = "919141542270";
 const EMAIL = "kartik.h6822@gmail.com";
-const SITE = "kartik-h6.github.io/Portfolio";
+const SITE = "kartik-h6.github.io/kartik-h6";
 
 const ROLES = {
   recruiter:  { label: "Recruiter or hiring manager", line: "I'm reaching out as a recruiter, about a role or opportunity." },
