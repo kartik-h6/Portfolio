@@ -1,6 +1,9 @@
 # Asset Manifest — repository contents
 
-**Regenerated:** 15 October 2026, from the tree at HEAD.
+**Regenerated:** 20 October 2026, from the tree at HEAD.
+
+> The repository was renamed from `Portfolio` to `kartik-h6`, and the site now
+> lives at `https://kartik-h6.github.io/kartik-h6/`.
 
 ---
 
@@ -15,7 +18,7 @@ down from ~22 MB.
 ## Repository layout
 
 ```
-Portfolio/
+kartik-h6/
 ├── .nojekyll                      tells GitHub Pages to skip the Jekyll build
 ├── 404.html                       custom not-found page
 ├── index.html  about.html  projects.html  research.html
@@ -30,7 +33,6 @@ Portfolio/
 │   │              animations.js  contact.js
 │   ├── files/     Kartik_H_CRS_Resume_2026.pdf
 │   │              AI_Patient_Education_Narrative_Review_Report.docx
-│   ├── git.keep   stray 1-byte placeholder (misnamed; see notes)
 │   └── images/
 │       ├── brand/     11 SVG lockups and symbols
 │       ├── favicon/   favicon.ico  favicon.svg  favicon-16/32/48.png
@@ -96,8 +98,6 @@ and is deliberately not published here.
 
 ## Notes
 
-- `assets/git.keep` is a 1-byte stray file, almost certainly intended as
-  `.gitkeep`. Harmless, but it is not doing the job a placeholder is meant to do.
 - `sitemap.xml` lists the seven content pages. `privacy.html` and `terms.html`
   are not included, which is a normal choice for utility pages.
 - Source material was originally collected from the Google Drive folder
