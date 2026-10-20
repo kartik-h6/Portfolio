@@ -2,9 +2,6 @@
 
 **Regenerated:** 20 October 2026, from the tree at HEAD.
 
-> The repository was renamed from `Portfolio` to `kartik-h6`, and the site now
-> lives at `https://kartik-h6.github.io/kartik-h6/`.
-
 ---
 
 ## Repository size
@@ -18,7 +15,7 @@ down from ~22 MB.
 ## Repository layout
 
 ```
-kartik-h6/
+Portfolio/
 ├── .nojekyll                      tells GitHub Pages to skip the Jekyll build
 ├── 404.html                       custom not-found page
 ├── index.html  about.html  projects.html  research.html
