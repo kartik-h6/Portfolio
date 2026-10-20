@@ -1,5 +1,5 @@
-# robots.txt — https://kartik-h6.github.io/Portfolio/
+# robots.txt — https://kartik-h6.github.io/kartik-h6/
 User-agent: *
 Allow: /
 
-Sitemap: https://kartik-h6.github.io/Portfolio/sitemap.xml
+Sitemap: https://kartik-h6.github.io/kartik-h6/sitemap.xml

@@ -11,7 +11,7 @@ older file, this file wins — and the older file should be corrected.
 - **Email:** kartik.h6822@gmail.com
 - **LinkedIn:** https://www.linkedin.com/in/kartik-h6
 - **GitHub:** https://github.com/kartik-h6
-- **Portfolio:** https://kartik-h6.github.io/Portfolio
+- **Portfolio:** https://kartik-h6.github.io/kartik-h6/
 - **WhatsApp:** +91 91415 42270 — **this is the only number published on the portfolio.**
 
 A second, business number exists (+91 94807 27214) and is used on the Digital Setup
@@ -69,9 +69,23 @@ not a certification — keep it separate in any count):
 - **S.M.I.L.E.** is a visual-communication asset from his medical-writing work — a
   preventive-health framework (Sleep, Move, Immunity-boosting foods, Love, Exposure to
   sunlight). It is not a pharmacology tool.
-- **The site lives at `https://kartik-h6.github.io/Portfolio/`.** An earlier note in this file
-  said `https://portfolio.techstudyhubcore.in`; that is superseded.
-- **A sibling repository `kartik-h6.github.io` exists** (created 13 Oct 2026) as a possible
-  migration to clean URLs at the domain root. It is a scaffold and is not the live site.
+- **The site lives at `https://kartik-h6.github.io/kartik-h6/`.** The repository was renamed
+  from `Portfolio` to `kartik-h6` (Oct 2026) so the repo path reads `kartik-h6/kartik-h6`.
+  Every absolute URL in the repo was updated to match; relative links were unaffected.
+  Earlier notes in this file said `https://portfolio.techstudyhubcore.in` and
+  `https://kartik-h6.github.io/Portfolio/` — both superseded.
+- **Two repositories have GitHub Pages enabled, and this matters.**
+  - `kartik-h6/kartik-h6` — **this one**, the real portfolio, served at
+    `https://kartik-h6.github.io/kartik-h6/`.
+  - `kartik-h6/kartik-h6.github.io` — an older scaffold (created 13 Oct 2026, commit
+    `2678dade`) of placeholder pages under clean paths (`/about/`, `/projects/`, `/pharmacy/`,
+    `/sslc/`, `/cgpacalculator/`). Because it is named `<user>.github.io`, **it owns the
+    domain root**, so `https://kartik-h6.github.io/` currently shows the scaffold, not the
+    portfolio. This has not been resolved.
+- **If the site ever moves to the domain root**, the change is mechanical: replace
+  `https://kartik-h6.github.io/kartik-h6/` with `https://kartik-h6.github.io/` in the 9 page
+  heads, and `/kartik-h6/` with `/` in `manifest.json`, `sitemap.xml` and `robots.txt`.
+  Note that the binary assets (portrait, OG image, WebPs, PDFs, DOCX) cannot be moved through
+  the API and would need a manual upload.
 - **The portfolio is the only site carrying a contact number.** Digital Setup has its own
   business line; the portfolio routes everything through the single personal number.
