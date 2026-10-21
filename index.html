@@ -94,10 +94,15 @@
         </div>
 
         <div class="scanner scanner--reveal reveal reveal--d2" data-reveal>
-          <img class="hero__portrait reveal__base" src="assets/images/profile/profile.jpg"
+          <span class="scanner__mark" aria-hidden="true">
+            <svg viewBox="0 0 100 100" focusable="false">
+              <defs><linearGradient id="revealMarkGrad" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#22d3ee"/><stop offset="100%" stop-color="#6366f1"/></linearGradient></defs>
+              <polygon points="50,5 88,27 88,73 50,95 12,73 12,27" fill="none" stroke="url(#revealMarkGrad)" stroke-width="3" stroke-linejoin="round"/>
+              <g stroke="url(#revealMarkGrad)" stroke-width="3" fill="none" stroke-linejoin="round"><polygon points="50,28 68,38 50,48 32,38"/><polygon points="32,38 50,48 50,68 32,58"/><polygon points="68,38 50,48 50,68 68,58"/></g>
+            </svg>
+          </span>
+          <img class="reveal__portrait" src="assets/images/profile/profile.jpg"
                alt="KARTIK H" width="1254" height="1254" loading="eager">
-          <img class="reveal__colour" src="assets/images/profile/profile.jpg"
-               alt="" aria-hidden="true" width="1254" height="1254" loading="eager">
           <span class="scanner__hint">Tap to reveal</span>
         </div>
       </div>
