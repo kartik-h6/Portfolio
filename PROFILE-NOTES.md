@@ -80,19 +80,20 @@ not a certification — keep it separate in any count):
   then reverted. Relative links were never affected, which is why the pages kept rendering
   and the breakage was invisible. **Any future rename means re-checking every absolute URL** —
   `grep -rn 'github.io/' .` is the fast way to find them.
-- **Two repositories have GitHub Pages enabled, and this matters.**
-  - `kartik-h6/Portfolio` — **this one**, the real portfolio, served at
-    `https://kartik-h6.github.io/Portfolio/`.
-  - `kartik-h6/kartik-h6.github.io` — an older scaffold (created 13 Oct 2026, commit
-    `2678dade`) of placeholder pages under clean paths (`/about/`, `/projects/`, `/pharmacy/`,
-    `/sslc/`, `/cgpacalculator/`). Because it is named `<user>.github.io`, **it owns the
-    domain root**, so `https://kartik-h6.github.io/` shows the scaffold, not the portfolio.
-    Its `index.html` also references an OG image that does not exist. This is unresolved, and
-    deliberately left as-is.
-- **If the site ever moves to the domain root**, the change is mechanical: replace
+- **The domain root is a redirect, not a second site.** `https://kartik-h6.github.io/` is
+  served by its own repository, `kartik-h6/kartik-h6.github.io` (created 22 Oct 2026), which
+  holds nothing but a redirect page, `.nojekyll` and a README. It sends visitors to
+  `https://kartik-h6.github.io/Portfolio/`.
+  - The scaffold that used to own the root — placeholder pages under clean paths (`/about/`,
+    `/projects/`, `/pharmacy/`, `/sslc/`, `/cgpacalculator/`) — was **deleted**, and the
+    redirect repo replaced it. Nothing of the scaffold survives.
+  - A repository named `<user>.github.io` is the only one that can serve the domain root, so
+    this is the only way to keep the root from being a dead end without mirroring every asset.
+- **If the site is ever moved to the domain root**, the change is mechanical: copy every file
+  from this repo into `kartik-h6.github.io`, then replace
   `https://kartik-h6.github.io/Portfolio/` with `https://kartik-h6.github.io/` in the 9 page
-  heads, and `/Portfolio/` with `/` in `manifest.json`, `sitemap.xml` and `robots.txt`.
-  Note that the binary assets (portrait, OG image, WebPs, PDFs, DOCX) cannot be moved through
-  the API and would need a manual upload.
+  heads and `/Portfolio/` with `/` in `manifest.json`, `sitemap.xml` and `robots.txt`. The
+  binary assets (portrait, OG image, WebPs, PDFs, DOCX) cannot be moved through the API and
+  would need a manual upload — which is why a redirect is the arrangement for now.
 - **The portfolio is the only site carrying a contact number.** Digital Setup has its own
   business line; the portfolio routes everything through the single personal number.
