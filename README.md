@@ -176,7 +176,7 @@ Presented on nanoparticle drug-delivery systems to a multi-institutional audienc
 |---|---|
 | **[PMAS](https://github.com/kartik-h6/PMAS)** | Pharmacist-led Medication & Adherence Support — an independent telepharmacy build, offline-first, five-language (EN/TE/KN/TA/HI) patient PWA, pharmacist portal and FastAPI backend, for rural and remote chronic care. |
 | **[techstudyhubcore-archive](https://github.com/kartik-h6/techstudyhubcore-archive)** | The archived engineering record of the TechStudyHubCore ecosystem — what it was, what was built, and why the public infrastructure was retired. |
-| **[SGPA-CGPA-CALCULATOR](https://github.com/kartik-h6/SGPA-CGPA-CALCULATOR)** | CGPA/SGPA calculator built on the official PCI 2026 B.Pharm syllabus — real credit values and classification thresholds. |
+| **[e-library](https://github.com/kartik-h6/e-library)** | A semester-wise B.Pharm study library on the PCI 2026 (NEP 2020) syllabus. The earlier standalone CGPA/SGPA calculator repo now resolves here. |
 | **[digital-setup](https://github.com/kartik-h6/digital-setup)** | Freelance digital infrastructure for local businesses — one-time builds on the owner's own domain, instead of recurring software subscriptions. |
 
 ---
