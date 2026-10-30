@@ -154,15 +154,19 @@ Not a footnote. The ability to explain a medicine in the patient's own language 
 
 **Telepharmacy — Comparative Literature Review (2025)**
 
-*"Patient Satisfaction and Counseling Effectiveness in Telepharmacy: A Comparative Literature Review of Remote vs. Face-to-Face"* — RGUHS final-year dissertation, carried out individually from literature search through to presentation. Satisfaction came out high in both models (**4.2 remote vs 4.5 face-to-face**), but trust and emotional reassurance still leaned toward in-person care — which reframed the question as *which mode suits a given patient at a given point in the care journey*, rather than which model wins.
+*"Patient Satisfaction and Counseling Effectiveness in Telepharmacy: A Comparative Literature Review of Remote vs. Face-to-Face"* — RGUHS final-year dissertation, submitted as a five-student group project. My contribution was the literature search strategy and screening, the evidence synthesis, the write-up and the presentation. Satisfaction came out high in both models (**4.2 remote vs 4.5 face-to-face**), but trust and emotional reassurance still leaned toward in-person care — which reframed the question as *which mode suits a given patient at a given point in the care journey*, rather than which model wins.
 
 **Medical writing sample — AI Patient Education Narrative Review**
 
 A narrative review report written during the Junior Medical Writing internship — [read the report](assets/files/AI_Patient_Education_Narrative_Review_Report.docx).
 
-**Research presentation — PharmaNEST 3.E International Conference, Ooty (2022)**
+**Conference presentation — PharmaNEST 3.E, Ooty (2022)**
 
-Presented on nanoparticle drug-delivery systems to a multi-institutional audience; recognised as an award recipient.
+Presented a poster on nanoparticle drug-delivery systems to a multi-institutional audience, and received an award recognition among peer presenters.
+
+**In progress — M.Pharm thesis (2026–)**
+
+A vernacular, pharmacist-triaged channel for patient-reported adverse drug reactions: instrument development and pilot evaluation, in Kannada and Telugu. The reporting instrument is intended as the methodological contribution rather than the app. Scope is being finalised with the department; fieldwork follows institutional ethics clearance. Listed here as work in progress, not as a result.
 
 <p align="center">
   <img src="visuals/telepharmacy-infographic.webp" alt="telepharmacy-infographic" width="360" />

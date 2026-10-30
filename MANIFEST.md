@@ -100,3 +100,19 @@ and is deliberately not published here.
 - Source material was originally collected from the Google Drive folder
   `1Q4H74IroLXvXIfUwr_zxzLZAepc7hgR7` (13 October 2026). Contact details,
   locations and academic facts are recorded in `PROFILE-NOTES.md`.
+
+---
+
+## Corrections of 30 October 2026
+
+- `assets/files/Kartik_H_CRS_Resume_2026.pdf` was **rebuilt**, not edited in place. It is now
+  generated from `scripts/build_resume.py` (ReportLab, 2 pages, A4). The previous version
+  printed the business contact line and a retired domain, and described the dissertation as
+  solo work; all three are corrected. If the resume needs changing again, change the script and
+  re-run it.
+- `README.md`, `projects.html` and `research.html` had the dissertation described as individual
+  work. Corrected to a five-student group submission with the contribution stated.
+- The 2022 conference is referred to as "PharmaNEST 3.E, Ooty (2022)" without an
+  international/national qualifier until one is confirmed.
+- `research.html` and the README gained an in-progress entry for the M.Pharm thesis.
+- See `PROFILE-NOTES.md` for the reasoning behind each correction.

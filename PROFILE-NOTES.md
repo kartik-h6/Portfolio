@@ -97,3 +97,37 @@ not a certification — keep it separate in any count):
   would need a manual upload — which is why a redirect is the arrangement for now.
 - **The portfolio is the only site carrying a contact number.** Digital Setup has its own
   business line; the portfolio routes everything through the single personal number.
+
+---
+
+## Corrections made 30 October 2026
+
+Recorded because each of these was a live contradiction between two documents in this
+repository. Where they conflict with an older file, this section wins.
+
+- **The B.Pharm dissertation was a five-student group submission.** The cover page of
+  `projects/telepharmacy-project.pdf` names Firdous Mujjawar, KARTIK H, Deepak K S, Nayana N
+  and Bijal Rajesh Shah. Earlier wording in `README.md` and `projects.html` said the work was
+  "carried out individually" / "from start to finish"; that was wrong and has been corrected.
+  The accurate statement is: group dissertation, with his contribution being the literature
+  search strategy and screening, the evidence synthesis, the write-up and the presentation.
+  Never describe it as solo work — the PDF is one click away.
+- **The 2022 conference has one name everywhere: "PharmaNEST 3.E, Ooty (2022)".** The README
+  called it an international conference and the resume called it a national-level conference.
+  Neither qualifier is used until a certificate confirms which is right; add it back only then.
+- **The M.Pharm start date is October 2026.** The resume previously said August 2026.
+- **The resume carries the personal number only.** `assets/files/Kartik_H_CRS_Resume_2026.pdf`
+  previously printed the business line (+91 94807 27214), which this file says must stay off
+  the portfolio. It now prints +91 91415 42270, and the retired `techstudyhubcore.in` link has
+  been replaced with the portfolio URL.
+- **The resume is generated, not hand-maintained.** It is built by `scripts/build_resume.py`
+  (ReportLab). Edit the script and re-run it rather than editing the PDF, so the next
+  correction does not drift again.
+- **TechStudyHubCore is archived, not "present".** The resume said "Apr 2026 – Present"; it
+  now reads "Apr 2026 – Oct 2026 · archived", matching the README and `projects.html`.
+- **The portfolio build stack is hand-written HTML, CSS and JS on GitHub Pages.** The resume
+  previously claimed Tailwind CSS, Netlify and Cloudflare DNS, none of which this repository
+  uses.
+- **The M.Pharm thesis is listed as work in progress, not as a result.** `research.html` and
+  the README now carry it as in-progress, with the scope still being finalised and fieldwork
+  subject to ethics clearance.
