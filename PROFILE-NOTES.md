@@ -11,7 +11,7 @@ older file, this file wins — and the older file should be corrected.
 - **Email:** kartik.h6822@gmail.com
 - **LinkedIn:** https://www.linkedin.com/in/kartik-h6
 - **GitHub:** https://github.com/kartik-h6
-- **Portfolio:** https://kartik-h6.github.io/Portfolio/
+- **Portfolio:** https://portfolio.techstudyhubcore.in/
 - **WhatsApp:** +91 91415 42270 — **this is the only number published on the portfolio.**
 
 A second, business number exists (+91 94807 27214) and is used on the Digital Setup
@@ -69,32 +69,43 @@ not a certification — keep it separate in any count):
 - **S.M.I.L.E.** is a visual-communication asset from his medical-writing work — a
   preventive-health framework (Sleep, Move, Immunity-boosting foods, Love, Exposure to
   sunlight). It is not a pharmacology tool.
-- **The site lives at `https://kartik-h6.github.io/Portfolio/`.** An earlier note in this file
-  said `https://portfolio.techstudyhubcore.in`; that is superseded.
+- **The site lives at `https://portfolio.techstudyhubcore.in/`**, deployed on **Netlify** from
+  this repository. The history keeps flipping, so record it plainly: the site was first at
+  `portfolio.techstudyhubcore.in`, moved to GitHub Pages at
+  `https://kartik-h6.github.io/Portfolio/`, and on 5 November 2026 moved back to the custom
+  domain — this time served by Netlify, not GitHub Pages.
+- **Netlify serves the repository at the domain ROOT**, so URLs have no `/Portfolio/` segment:
+  `portfolio.techstudyhubcore.in/about.html`, not `.../Portfolio/about.html`. Every absolute
+  URL in this repo was rewritten accordingly — `canonical`, `og:*`, JSON-LD, `sitemap.xml`,
+  `robots.txt`, `manifest.json` `start_url`/`scope`, and the site origin in
+  `assets/js/main.js` / `assets/js/contact.js`. The README badges and `scripts/build_resume.py`
+  still carry the old GitHub Pages URL and need the same one-line change.
 - **The repository was briefly renamed to `kartik-h6` (Oct 2026) and then renamed back to
   `Portfolio`.** Worth recording why it is not trivial: on GitHub Pages the repository name
-  *is* the URL path, so the rename silently invalidated 58 absolute references — every
-  `canonical` and `og:*` tag, the JSON-LD, `sitemap.xml`, `robots.txt`, the PWA manifest's
-  `start_url`/`scope`, the README badges, the site origin in `assets/js/main.js`, and the
-  signature appended to every contact message in `assets/js/contact.js`. All were updated and
-  then reverted. Relative links were never affected, which is why the pages kept rendering
-  and the breakage was invisible. **Any future rename means re-checking every absolute URL** —
-  `grep -rn 'github.io/' .` is the fast way to find them.
+  *is* the URL path, so the rename silently invalidated 58 absolute references. All were
+  updated and then reverted. Relative links were never affected, which is why the pages kept
+  rendering and the breakage was invisible. **Any rename or host change means re-checking every
+  absolute URL** — `grep -rn 'https://' *.html` and `grep -rn 'github.io/' .` are the fast ways
+  to find them.
 - **The domain root is a redirect, not a second site.** `https://kartik-h6.github.io/` is
   served by its own repository, `kartik-h6/kartik-h6.github.io` (created 22 Oct 2026), which
   holds nothing but a redirect page, `.nojekyll` and a README. It sends visitors to
-  `https://kartik-h6.github.io/Portfolio/`.
+  `https://portfolio.techstudyhubcore.in/`.
   - The scaffold that used to own the root — placeholder pages under clean paths (`/about/`,
     `/projects/`, `/pharmacy/`, `/sslc/`, `/cgpacalculator/`) — was **deleted**, and the
     redirect repo replaced it. Nothing of the scaffold survives.
   - A repository named `<user>.github.io` is the only one that can serve the domain root, so
     this is the only way to keep the root from being a dead end without mirroring every asset.
-- **If the site is ever moved to the domain root**, the change is mechanical: copy every file
-  from this repo into `kartik-h6.github.io`, then replace
-  `https://kartik-h6.github.io/Portfolio/` with `https://kartik-h6.github.io/` in the 9 page
-  heads and `/Portfolio/` with `/` in `manifest.json`, `sitemap.xml` and `robots.txt`. The
-  binary assets (portrait, OG image, WebPs, PDFs, DOCX) cannot be moved through the API and
-  would need a manual upload — which is why a redirect is the arrangement for now.
+- **Deployment is Netlify, from this repository's `main` branch.** `netlify.toml` pins
+  `publish = "."` and switches off Netlify's post-processing, so files are served exactly as
+  authored — the site uses explicit `.html` links and its own `404.html`, and "Pretty URLs"
+  would otherwise rewrite those paths. GitHub Pages is still enabled on the same repository
+  and serves the same content at `https://kartik-h6.github.io/Portfolio/`; the canonical URLs
+  now point at the custom domain, so that copy is a mirror rather than the primary.
+- **The custom domain sits on a retired brand's zone.** `techstudyhubcore.in` belongs to
+  TechStudyHubCore, which is archived. If that domain registration is allowed to lapse, the
+  portfolio URL dies with it. Worth confirming renewal, or moving to a domain held for the
+  portfolio itself.
 - **The portfolio is the only site carrying a contact number.** Digital Setup has its own
   business line; the portfolio routes everything through the single personal number.
 
@@ -118,16 +129,17 @@ repository. Where they conflict with an older file, this section wins.
 - **The M.Pharm start date is October 2026.** The resume previously said August 2026.
 - **The resume carries the personal number only.** `assets/files/Kartik_H_CRS_Resume_2026.pdf`
   previously printed the business line (+91 94807 27214), which this file says must stay off
-  the portfolio. It now prints +91 91415 42270, and the retired `techstudyhubcore.in` link has
-  been replaced with the portfolio URL.
+  the portfolio. It now prints +91 91415 42270. The portfolio link printed inside the PDF
+  still reads `kartik-h6.github.io/Portfolio/`; `scripts/build_resume.py` has already been
+  updated to the custom domain, so the PDF needs regenerating to match.
 - **The resume is generated, not hand-maintained.** It is built by `scripts/build_resume.py`
   (ReportLab). Edit the script and re-run it rather than editing the PDF, so the next
   correction does not drift again.
 - **TechStudyHubCore is archived, not "present".** The resume said "Apr 2026 – Present"; it
   now reads "Apr 2026 – Oct 2026 · archived", matching the README and `projects.html`.
-- **The portfolio build stack is hand-written HTML, CSS and JS on GitHub Pages.** The resume
-  previously claimed Tailwind CSS, Netlify and Cloudflare DNS, none of which this repository
-  uses.
+- **The build stack is hand-written HTML, CSS and JS — no framework.** The resume previously
+  claimed Tailwind CSS, Netlify and Cloudflare DNS. Tailwind and Cloudflare were never used;
+  Netlify became the deploy target on 5 November 2026 (GitHub Pages before that).
 - **The M.Pharm thesis is listed as work in progress, not as a result.** `research.html` and
   the README now carry it as in-progress, with the scope still being finalised and fieldwork
   subject to ethics clearance.
