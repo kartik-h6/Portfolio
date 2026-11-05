@@ -1,0 +1,34 @@
+# Netlify configuration — https://portfolio.techstudyhubcore.in
+#
+# The repository root IS the site, so publish = ".". Netlify's post-processing is
+# switched off deliberately: the site links to explicit .html files and ships its own
+# 404.html, and "Pretty URLs" would rewrite those paths out from under the sitemap.
+[build]
+  publish = "."
+
+[build.processing]
+  skip_processing = true
+
+# Static assets change rarely; let browsers keep them for a week.
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "/visuals/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+# The HTML should always be revalidated, so a deploy is picked up immediately.
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Frame-Options = "SAMEORIGIN"

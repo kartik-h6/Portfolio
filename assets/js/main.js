@@ -7,7 +7,7 @@
 /** Site-wide constants. */
 export const SITE = Object.freeze({
   name: 'KARTIK H',
-  origin: 'https://kartik-h6.github.io/Portfolio',
+  origin: 'https://portfolio.techstudyhubcore.in',
   email: 'kartik.h6822@gmail.com',
   links: {
     linkedin: 'https://www.linkedin.com/in/kartik-h6',
