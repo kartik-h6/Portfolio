@@ -87,30 +87,29 @@ function initCursor() {
 }
 
 /* --------------------------------------------------------------------------
-   Lightbox — opens a tall infographic at a readable size and lets it scroll.
+   Lightbox — a native <dialog> in the top layer, so the browser supplies the
+   focus trap, ::backdrop, Esc/back-gesture dismissal and focus return to the
+   invoker. None of that is rebuilt here, and there is deliberately no role,
+   aria-modal, focus management or scroll lock.
    -------------------------------------------------------------------------- */
 function ensureLightbox() {
   let lb = document.getElementById('lightbox');
   if (lb) return lb;
 
-  lb = make('div', 'lightbox',
-    '<button class="lightbox__close" type="button" aria-label="Close enlarged image">Close</button>' +
+  // The close button lives in a <form method="dialog">, so submitting it closes
+  // the dialog natively — no click handler, no close() call.
+  lb = make('dialog', 'lightbox',
+    '<form method="dialog">' +
+      '<button class="lightbox__close" type="submit" aria-label="Close enlarged image" autofocus>Close</button>' +
+    '</form>' +
     '<img alt="">');
   lb.id = 'lightbox';
-  lb.dataset.open = 'false';
-  lb.setAttribute('role', 'dialog');
-  lb.setAttribute('aria-modal', 'true');
   lb.setAttribute('aria-label', 'Enlarged image');
   document.body.append(lb);
 
-  const close = () => {
-    lb.dataset.open = 'false';
-    document.documentElement.style.overflow = '';
-  };
-  lb.addEventListener('click', (e) => {
-    if (e.target === lb || (e.target.closest && e.target.closest('.lightbox__close'))) close();
-  });
-  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
+  // A click that lands on the dialog box itself (its padding, or the backdrop)
+  // dismisses it; clicks on the image or the close button do not.
+  lb.addEventListener('click', (e) => { if (e.target === lb) lb.close(); });
   return lb;
 }
 
@@ -140,10 +139,8 @@ function initScanners() {
         const big = lb.querySelector('img');
         big.src = img.currentSrc || img.src;
         big.alt = img.alt || '';
-        lb.dataset.open = 'true';
+        lb.showModal();
         lb.scrollTop = 0;
-        document.documentElement.style.overflow = 'hidden';
-        lb.querySelector('.lightbox__close').focus();
       };
       box.addEventListener('click', open);
       box.addEventListener('keydown', (e) => {

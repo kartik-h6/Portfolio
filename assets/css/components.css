@@ -356,17 +356,65 @@ html.cursor-on input, html.cursor-on textarea, html.cursor-on select { cursor: t
 /* --------------------------------------------------------------------------
    Lightbox — scrolls for tall images instead of shrinking them
    -------------------------------------------------------------------------- */
-.lightbox {
-  position: fixed; inset: 0; z-index: 9998;
-  display: block; overflow-y: auto; overflow-x: hidden;
+dialog.lightbox {
+  /* Full-bleed: the dialog itself is the scroll container. */
+  position: fixed; inset: 0;
+  width: 100%; height: 100%; max-width: none; max-height: none; margin: 0;
+  border: 0; background: transparent; color: var(--ink);
   padding: clamp(3.5rem, 7vw, 5rem) clamp(1rem, 4vw, 3rem) clamp(1.5rem, 4vw, 3rem);
-  background: color-mix(in srgb, var(--bg) 93%, transparent);
-  backdrop-filter: blur(10px);
-  opacity: 0; visibility: hidden;
-  transition: opacity .3s ease, visibility .3s ease;
+  overflow-y: auto; overflow-x: hidden;
   text-align: center;
+
+  /* Closed state. display and overlay must be transitioned with
+     allow-discrete or the element vanishes instead of animating out. */
+  opacity: 0;
+  transition-property: opacity, transform, display, overlay;
+  transition-duration: .3s;
+  transition-timing-function: ease-out;
+  transition-behavior: allow-discrete;
 }
-.lightbox[data-open="true"] { opacity: 1; visibility: visible; }
+
+/* Without this, scrolling over the backdrop or inside the dialog chains
+   through to the page behind it. */
+dialog.lightbox:modal { overscroll-behavior: contain; }
+
+dialog.lightbox[open] { opacity: 1; }
+
+dialog.lightbox::backdrop {
+  background-color: color-mix(in srgb, var(--bg) 93%, transparent);
+  backdrop-filter: blur(10px);
+  transition-property: background-color, display, overlay;
+  transition-duration: .3s;
+  transition-timing-function: ease-out;
+  transition-behavior: allow-discrete;
+}
+
+/* Entry state. Top-level rather than nested, to match this file's flat style. */
+@starting-style {
+  dialog.lightbox[open] { opacity: 0; }
+  dialog.lightbox[open]::backdrop { background-color: transparent; }
+}
+
+/* Scale only for users who have not asked for reduced motion. */
+@media (prefers-reduced-motion: no-preference) {
+  dialog.lightbox { transform: scale(.96); }
+  dialog.lightbox[open] { transform: scale(1); }
+  @starting-style {
+    dialog.lightbox[open] { transform: scale(.96); }
+  }
+}
+
+/* Reduced motion still gets a short fade, not an instant snap — a full-screen
+   overlay appearing with no transition reads as a flash. This needs !important
+   because animations.css applies `transition-duration: .001ms !important` to
+   every element under this media query; the fade is opacity-only, so it is not
+   the decorative motion that rule exists to neutralise. */
+@media (prefers-reduced-motion: reduce) {
+  dialog.lightbox,
+  dialog.lightbox::backdrop {
+    transition-duration: .1s !important;
+  }
+}
 .lightbox img {
   display: block; margin-inline: auto; height: auto;
   max-width: min(100%, 900px);
