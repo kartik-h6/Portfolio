@@ -106,6 +106,14 @@ not a certification — keep it separate in any count):
   TechStudyHubCore, which is archived. If that domain registration is allowed to lapse, the
   portfolio URL dies with it. Worth confirming renewal, or moving to a domain held for the
   portfolio itself.
+- **The README's capability section is framed as strength, not disclaimer.** It is titled
+  *Clinical Product Architecture & AI Workflow Orchestration*. An earlier version was headed
+  "AI orchestration — not software engineering" and opened with "I'm not a computer-science
+  specialist" — accurate, but it led with a limitation. The work is real and the framing should
+  say so: domain expertise applied at product speed is what lets one person carry a clinical
+  idea to a working product without an engineering team. **Keep the honesty about how the code
+  is produced** ("generated, reviewed and shipped under my direction"); do not drop that line
+  to sound more like an engineer, and do not reintroduce the "I'm not…" opener.
 - **The portfolio is the only site carrying a contact number.** Digital Setup has its own
   business line; the portfolio routes everything through the single personal number.
 

@@ -71,17 +71,18 @@ Two failures I keep running into in healthcare delivery:
 - Patient-counselling and health-literacy content
 - Telepharmacy concepts and digital-health engagement
 
-### AI orchestration — not software engineering
+### Clinical Product Architecture & AI Workflow Orchestration
 
-I'm not a computer-science specialist, and I don't write production code as a discipline. What I do is **direct LLM models across the whole build lifecycle** and own the architecture around them:
+I architect clinical products and direct AI models to build them end to end. The product decisions, the data model and the judgement about what the software must never claim are mine; the code is generated, reviewed and shipped under my direction.
 
 - **Idea → plan → design → build → deploy → host**, driven end to end
-- Prompt design and deterministic prompt structures
-- Directing models to produce, review and refine the code
-- Live hosting and delivery: domains, subdomains, multi-page routing (`/` paths)
+- Product and data-model architecture — what the patient sees, what the pharmacist sees, and what is deliberately never stored together
+- Prompt design and deterministic prompt structures that keep generated code coherent across a whole build
+- Directing models to produce, review and refine their own output
+- Live delivery: domains, subdomains, multi-page routing (`/` paths), hosting
 - No-code automation and structured content workflows
 
-The judgement being applied is about *what to build and why* — and keeping the result coherent — not about writing the syntax myself.
+The value is domain judgement applied at product speed — knowing which clinical problem is worth solving, what the evidence actually supports, and where a prototype must be honest about its limits. That is what lets one person carry a clinical idea to a working product without a full engineering team.
 
 ### Languages — a clinical asset
 
