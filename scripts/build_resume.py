@@ -7,7 +7,7 @@ Corrections applied vs the previous PDF:
   * dissertation: stated as a five-student group project with his contribution
   * M.Pharm start date Aug 2026 -> Oct 2026
   * TechStudyHubCore: "Apr 2026 - Present" -> archived
-  * portfolio build stack: Tailwind/Netlify/Cloudflare -> hand-written HTML/CSS/JS on GitHub Pages
+  * portfolio build stack: Tailwind/Netlify/Cloudflare -> hand-written HTML/CSS/JS, deployed on Vercel
   * added the two internships and the remaining five certifications
 """
 from reportlab.lib.pagesizes import A4
@@ -61,7 +61,7 @@ S.append(Paragraph("M.Pharm (Pharmacy Practice) Candidate &nbsp;|&nbsp; Clinical
                    "Evidence Synthesis &nbsp;|&nbsp; Medical Writing", tagline))
 S.append(Paragraph("+91 91415 42270 &nbsp;\u2022&nbsp; kartik.h6822@gmail.com &nbsp;\u2022&nbsp; Koppal, "
                    "Karnataka &nbsp;|&nbsp; Open to Remote / On-site / Hybrid", contact))
-S.append(Paragraph("linkedin.com/in/kartik-h6 &nbsp;\u2022&nbsp; kartik-h6.github.io/Portfolio/", contact))
+S.append(Paragraph("linkedin.com/in/kartik-h6 &nbsp;\u2022&nbsp; portfolio.techstudyhubcore.in", contact))
 S.append(Spacer(1, 4))
 
 # ---- summary

@@ -69,17 +69,17 @@ not a certification — keep it separate in any count):
 - **S.M.I.L.E.** is a visual-communication asset from his medical-writing work — a
   preventive-health framework (Sleep, Move, Immunity-boosting foods, Love, Exposure to
   sunlight). It is not a pharmacology tool.
-- **The site lives at `https://portfolio.techstudyhubcore.in/`**, deployed on **Netlify** from
+- **The site lives at `https://portfolio.techstudyhubcore.in/`**, deployed on **Vercel** from
   this repository. The history keeps flipping, so record it plainly: the site was first at
   `portfolio.techstudyhubcore.in`, moved to GitHub Pages at
-  `https://kartik-h6.github.io/Portfolio/`, and on 5 November 2026 moved back to the custom
-  domain — this time served by Netlify, not GitHub Pages.
-- **Netlify serves the repository at the domain ROOT**, so URLs have no `/Portfolio/` segment:
+  `https://kartik-h6.github.io/Portfolio/`, moved back to the custom domain on Netlify
+  (5 Nov 2026), and on 17 Nov 2026 moved again to **Vercel** — which is the host now.
+- **The host serves the repository at the domain ROOT**, so URLs have no `/Portfolio/` segment:
   `portfolio.techstudyhubcore.in/about.html`, not `.../Portfolio/about.html`. Every absolute
   URL in this repo was rewritten accordingly — `canonical`, `og:*`, JSON-LD, `sitemap.xml`,
   `robots.txt`, `manifest.json` `start_url`/`scope`, and the site origin in
   `assets/js/main.js` / `assets/js/contact.js`. The README badges and `scripts/build_resume.py`
-  still carry the old GitHub Pages URL and need the same one-line change.
+  now point at the custom domain too.
 - **The repository was briefly renamed to `kartik-h6` (Oct 2026) and then renamed back to
   `Portfolio`.** Worth recording why it is not trivial: on GitHub Pages the repository name
   *is* the URL path, so the rename silently invalidated 58 absolute references. All were
@@ -96,12 +96,17 @@ not a certification — keep it separate in any count):
     redirect repo replaced it. Nothing of the scaffold survives.
   - A repository named `<user>.github.io` is the only one that can serve the domain root, so
     this is the only way to keep the root from being a dead end without mirroring every asset.
-- **Deployment is Netlify, from this repository's `main` branch.** `netlify.toml` pins
-  `publish = "."` and switches off Netlify's post-processing, so files are served exactly as
-  authored — the site uses explicit `.html` links and its own `404.html`, and "Pretty URLs"
-  would otherwise rewrite those paths. GitHub Pages is still enabled on the same repository
-  and serves the same content at `https://kartik-h6.github.io/Portfolio/`; the canonical URLs
-  now point at the custom domain, so that copy is a mirror rather than the primary.
+- **Deployment is Vercel**, connected to this repository's `main` branch, with the site built
+  from the repo root (no build step — it is static HTML). **DNS lives in Cloudflare**, and the
+  `portfolio` record must stay **DNS-only (grey cloud)**: with Cloudflare proxying, Vercel's
+  certificate and redirect handling break, and *Flexible* SSL produces a redirect loop.
+  `netlify.toml` was deleted when Netlify was dropped — do not reintroduce host-specific
+  config for a host this repo no longer uses.
+- **GitHub Pages remains enabled as a mirror only.** The Actions workflow in
+  `.github/workflows/static.yml` still deploys to `https://kartik-h6.github.io/Portfolio/`, and
+  the canonical URLs point at the custom domain, so that copy is secondary. Its custom domain
+  was **released** on 17 Nov 2026 so Vercel could own `portfolio.techstudyhubcore.in` — do not
+  re-add a Pages custom domain or the two will fight over the certificate.
 - **The custom domain sits on a retired brand's zone.** `techstudyhubcore.in` belongs to
   TechStudyHubCore, which is archived. If that domain registration is allowed to lapse, the
   portfolio URL dies with it. Worth confirming renewal, or moving to a domain held for the
@@ -146,8 +151,9 @@ repository. Where they conflict with an older file, this section wins.
 - **TechStudyHubCore is archived, not "present".** The resume said "Apr 2026 – Present"; it
   now reads "Apr 2026 – Oct 2026 · archived", matching the README and `projects.html`.
 - **The build stack is hand-written HTML, CSS and JS — no framework.** The resume previously
-  claimed Tailwind CSS, Netlify and Cloudflare DNS. Tailwind and Cloudflare were never used;
-  Netlify became the deploy target on 5 November 2026 (GitHub Pages before that).
+  claimed Tailwind CSS, Netlify and Cloudflare DNS. Tailwind was never used. The deploy history
+  is GitHub Pages → Netlify (5 Nov 2026) → Vercel (17 Nov 2026); Cloudflare has only ever been
+  the DNS provider.
 - **The M.Pharm thesis is listed as work in progress, not as a result.** `research.html` and
   the README now carry it as in-progress, with the scope still being finalised and fieldwork
   subject to ethics clearance.
