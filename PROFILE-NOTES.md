@@ -102,11 +102,20 @@ not a certification — keep it separate in any count):
   certificate and redirect handling break, and *Flexible* SSL produces a redirect loop.
   `netlify.toml` was deleted when Netlify was dropped — do not reintroduce host-specific
   config for a host this repo no longer uses.
-- **GitHub Pages remains enabled as a mirror only.** The Actions workflow in
-  `.github/workflows/static.yml` still deploys to `https://kartik-h6.github.io/Portfolio/`, and
-  the canonical URLs point at the custom domain, so that copy is secondary. Its custom domain
-  was **released** on 17 Nov 2026 so Vercel could own `portfolio.techstudyhubcore.in` — do not
-  re-add a Pages custom domain or the two will fight over the certificate.
+- **GitHub Pages is not a deploy target any more.** The Pages deploy workflow
+  (`.github/workflows/static.yml`) was **deleted** on 20 Nov 2026 — Vercel is the only host.
+  Only `link-check.yml` remains, which is CI and deploys nothing. Two things still need doing
+  in the repository **settings**, which the API token cannot touch:
+  1. **Settings → Pages → Custom domain → clear it.** Pages still claims
+     `portfolio.techstudyhubcore.in`; while it does, Pages keeps failing to provision a
+     certificate for a domain it no longer serves.
+  2. Optionally disable Pages entirely (Settings → Pages → Source: None).
+- **Cloudflare's `portfolio` record must point at Vercel's own DNS target, not a deployment
+  URL.** On 20 Nov 2026 it pointed at `portfolio-eta-gray-dc1ra0rg01.vercel.app` — the
+  immutable hostname of a single deployment — so Vercel never validated the domain. The
+  working `pharmacy` subdomain shows the correct shape: a CNAME to
+  `*.vercel-dns-*.com`, **DNS only (grey cloud)**. Read the exact target from Vercel →
+  Project → Settings → Domains; do not copy a `*.vercel.app` URL from the deployments list.
 - **The custom domain sits on a retired brand's zone.** `techstudyhubcore.in` belongs to
   TechStudyHubCore, which is archived. If that domain registration is allowed to lapse, the
   portfolio URL dies with it. Worth confirming renewal, or moving to a domain held for the
