@@ -116,10 +116,10 @@ not a certification — keep it separate in any count):
   working `pharmacy` subdomain shows the correct shape: a CNAME to
   `*.vercel-dns-*.com`, **DNS only (grey cloud)**. Read the exact target from Vercel →
   Project → Settings → Domains; do not copy a `*.vercel.app` URL from the deployments list.
-- **The custom domain sits on a retired brand's zone.** `techstudyhubcore.in` belongs to
-  TechStudyHubCore, which is archived. If that domain registration is allowed to lapse, the
-  portfolio URL dies with it. Worth confirming renewal, or moving to a domain held for the
-  portfolio itself.
+- **The custom domain sits on a zone that expires at the end of 2026.** `techstudyhubcore.in`
+  belongs to TechStudyHubCore, and that registration is not being renewed. **The portfolio URL
+  therefore stops working at the turn of the year** — move it to a domain held for the
+  portfolio itself before then, or the site loses its address.
 - **The README's capability section is framed as strength, not disclaimer.** It is titled
   *Clinical Product Architecture & AI Workflow Orchestration*. An earlier version was headed
   "AI orchestration — not software engineering" and opened with "I'm not a computer-science
@@ -157,8 +157,11 @@ repository. Where they conflict with an older file, this section wins.
 - **The resume is generated, not hand-maintained.** It is built by `scripts/build_resume.py`
   (ReportLab). Edit the script and re-run it rather than editing the PDF, so the next
   correction does not drift again.
-- **TechStudyHubCore is archived, not "present".** The resume said "Apr 2026 – Present"; it
-  now reads "Apr 2026 – Oct 2026 · archived", matching the README and `projects.html`.
+- **TechStudyHubCore is live but winding down, not "present".** The site is still online, but
+  it is no longer actively developed and the domain expires at the end of 2026. Earlier
+  wording in this repo called it "archived", which was wrong while the site was up — and
+  "Present" was wrong in the other direction. The accurate label is **live, winding down**, and
+  it should not be described as actively operating.
 - **The build stack is hand-written HTML, CSS and JS — no framework.** The resume previously
   claimed Tailwind CSS, Netlify and Cloudflare DNS. Tailwind was never used. The deploy history
   is GitHub Pages → Netlify (5 Nov 2026) → Vercel (17 Nov 2026); Cloudflare has only ever been

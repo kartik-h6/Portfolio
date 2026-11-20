@@ -100,11 +100,11 @@ Not a footnote. The ability to explain a medicine in the patient's own language 
 
 ## 💼 Experience
 
-**Founder & Builder — TechStudyHubCore** · Apr 2026 – 2026 · now archived
+**Founder & Builder — TechStudyHubCore** · Apr 2026 – 2026 · live, winding down
 
 - Built, alone, a learning ecosystem for pharmacy, nursing and school-level students: a root gateway, a structured B.Pharm architecture, SSLC content, a **CGPA/SGPA calculator built on the official PCI 2026 B.Pharm syllabus**, and a career navigator.
 - Deliberately chose not to compete on content volume, paywall student tools, use gamification, sell notes, or fabricate testimonials.
-- **Retired it.** Alongside M.Pharm and PMAS the ecosystem became too broad for one person to maintain responsibly; a team was hoped for but never formed. The engineering record is [archived](https://github.com/kartik-h6/techstudyhubcore-archive) rather than left to decay.
+- **Winding it down.** Alongside M.Pharm and PMAS the ecosystem became too broad for one person to maintain responsibly; a team was hoped for but never formed. The site is still online, but the domain expires at the end of 2026 and the engineering record is [preserved](https://github.com/kartik-h6/techstudyhubcore-archive) rather than left to decay.
 
 **Digital Setup — freelance** · ongoing
 
@@ -180,7 +180,7 @@ A vernacular, pharmacist-triaged channel for patient-reported adverse drug react
 | Repository | What it is |
 |---|---|
 | **[PMAS](https://github.com/kartik-h6/PMAS)** | Pharmacist-led Medication & Adherence Support — an independent telepharmacy build, offline-first, five-language (EN/TE/KN/TA/HI) patient PWA, pharmacist portal and FastAPI backend, for rural and remote chronic care. |
-| **[techstudyhubcore-archive](https://github.com/kartik-h6/techstudyhubcore-archive)** | The archived engineering record of the TechStudyHubCore ecosystem — what it was, what was built, and why the public infrastructure was retired. |
+| **[techstudyhubcore-archive](https://github.com/kartik-h6/techstudyhubcore-archive)** | The preserved engineering record of the TechStudyHubCore ecosystem — what it was, what was built, and why the public infrastructure is winding down. |
 | **[e-library](https://github.com/kartik-h6/e-library)** | A semester-wise B.Pharm study library on the PCI 2026 (NEP 2020) syllabus. The earlier standalone CGPA/SGPA calculator repo now resolves here. |
 | **[digital-setup](https://github.com/kartik-h6/digital-setup)** | Freelance digital infrastructure for local businesses — one-time builds on the owner's own domain, instead of recurring software subscriptions. |
 
